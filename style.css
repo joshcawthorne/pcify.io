@@ -1,0 +1,184 @@
+/* Base Style */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #3f51b5;
+  height: 10px;
+}
+
+h1, h2 {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  line-height: normal;
+}
+
+h3, h4 {
+  font-family: 'Space Mono', monospace;
+  color: #fff;
+  line-height: normal;
+  font-weight: 400;
+}
+
+/*Header, Footer, Background */
+
+header,
+main,
+footer {
+  margin: 0 10%; // Indirect way of making element width: 80%;
+}
+
+header,
+footer {
+  flex-basis: 100px;
+}
+
+header h1{
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 15px;
+  text-align: center;
+  padding-top: 1vw;
+  font-size: 33px;
+}
+
+header p{
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-weight: 400;
+  line-height: 0;
+  text-align: center;
+  padding-bottom: 1vw;
+}
+
+footer h1{
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 100;
+  position: absolute;
+  width: 81%;
+  bottom: 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+  header h1{
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 15px;
+    text-align: center;
+    padding-top: 0vw;
+    font-size: 25px;
+  }
+
+  header p{
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    line-height: 12px;;
+    text-align: center;
+    padding-bottom: 0vw;
+    font-size: 12px;
+  }
+
+  footer h1{
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 100;
+    position: absolute;
+    width: 81%;
+    bottom: 0;
+    padding-bottom: 7vw;
+    text-align: center;
+  }
+}
+
+main {
+  position: relative;
+  flex-grow: 1;
+  background-color: #42ab9e;
+}
+
+main:before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: -2px;
+  right: -100%;
+  bottom: -2px;
+  left: -100%;
+  display: block;
+}
+
+/* Name Collection */
+
+#nameCollection {
+  display: inline;
+}
+
+#nameCollection {
+ text-align: center;
+}
+
+#nameText {
+  margin-top: 10%;
+  margin-left: 15%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.nameSkipButton {
+  margin-top: 25px;
+  background-size: 210% 100%;
+  background-image: linear-gradient(to right, #963019 50%, #16174f 50%);
+  -webkit-transition: background-position 0.3s;
+  -moz-transition: background-position 0.3s;
+  transition: background-position 0.3s;
+  border: none;
+  font-family: 'Space Mono', monospace;
+  color: #fff;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.nameSkipButton:hover {
+  background-position: 99%, 0;
+}
+
+/*===============
+  Line Animation Styles
+  =============== */
+.decolines {
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	z-index: 2;
+}
+
+.decolines--fixed {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 2;
+}
+
+.decoline {
+	position: absolute;
+		z-index: 2;
+}

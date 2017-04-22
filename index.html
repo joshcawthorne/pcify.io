@@ -1,0 +1,83 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computerify.io</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Condensed" rel="stylesheet">
+  </head>
+  <header>
+    <h1 class="title" onclick="location.reload();" style="cursor: pointer;">COMPUTERIFY.IO</h1>
+    <p class="subTitle" onclick="location.reload();" style="cursor: pointer;">Alpha is just a fancy word for unfinished.</p>
+  </header>
+  <main>
+    <div id="nameCollection">
+      <div id="nameText">
+        <h3>Hello. I'm the PC Generator, or PCG for short. Before we get started, can I just ask...</h3>
+        <h1>What's your first name?</h1>
+        <div>
+          <input type = "button" style = "display:none" id = "btnSearch" value = "Search" onclick = "getUserName()"/>
+  				<span class="input input--nameCollection">
+  					<input class="input__field input__field--nameCollection" maxlength="19" onkeydown = "if (event.keyCode == 13) document.getElementById('btnSearch').click()" type="text" id="input-25" />
+  					<label class="input__label input__label--nameCollection" for="input-25">
+  						<span class="input__label-content input__label-content--nameCollection">First Name</span>
+  					</label>
+  				</span>
+        </div>
+        <input class="nameSkipButton" id="skipName" type="button" value="I don't value my name, pick one for me" onclick="confirmSkip();"/>
+      </div>
+  </main>
+  <footer>
+    <h1>Designed and Created by Josh Cawthorne | Version 2.0</h1>
+  </footer>
+  <script src="js/anime.min.js"></script>
+  <script src="js/lineMaker.js"></script>
+  <script>
+  (function() {
+    var lineMaker = new LineMaker({
+    position: 'fixed',
+    lines: [
+      {top: '11.5%', left: 0, width: '100%', height: 2, color: '#ddd', hidden: true},
+      {top: '89.5%', left: 0, width: '100%', height: 2, color: '#ddd', hidden: true},
+      {top: 0, left: '90%', width: 2, height: '100%', color: '#ddd', hidden: true},
+      {top: 0, left: '10%', width: 2, height: '100%', color: '#ddd', hidden: true},
+      {top: '11.5%', left: 0, width: '100%', height: 2, color: '#000', hidden: true, animation: { duration: 1000, easing: 'easeInOutExpo', delay: 0, direction: 'LeftRight' }},
+      {top: '89.5%', left: 0, width: '100%', height: 2, color: '#000', hidden: true, animation: { duration: 1000, easing: 'easeInOutExpo', delay: 100, direction: 'RightLeft' }},
+      {top: 0, left: '90%', width: 2, height: '100%', color: '#000', hidden: true, animation: { duration: 1000, easing: 'easeInOutExpo', delay: 200, direction: 'BottomTop' }},
+      {top: 0, left: '10%', width: 2, height: '100%', color: '#000', hidden: true, animation: { duration: 1000, easing: 'easeInOutExpo', delay: 300, direction: 'TopBottom' }}
+    ]
+    });
+
+    setTimeout(function() {
+    lineMaker.animateLineIn(4, {
+      complete: function() { lineMaker.showLine(0); }
+    });
+    lineMaker.animateLineIn(5, {
+      complete: function() { lineMaker.showLine(1); }
+    });
+    lineMaker.animateLineIn(6, {
+      complete: function() { lineMaker.showLine(2); }
+    });
+    lineMaker.animateLineIn(7, {
+      complete: function() { lineMaker.showLine(3); }
+    });
+    }, 100);
+
+    setTimeout(function() {
+    lineMaker.animateLineOut(4);
+    lineMaker.animateLineOut(5);
+    lineMaker.animateLineOut(6);
+    lineMaker.animateLineOut(7);
+    }, 2000);
+
+    setTimeout(function() {
+    //lineMaker.createLine({top: '13.3vh', left: '21vw', width: '60vw', height: 16, color: '#E91E63', hidden: true, animation: { duration: 1000, easing: 'easeInOutExpo', delay: 300, direction: 'LeftRight' }});
+
+    lineMaker.animateLineIn(8);
+    }, 2000);
+  })();
+  </script>
+
+</html>
